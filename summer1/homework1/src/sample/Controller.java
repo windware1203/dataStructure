@@ -18,7 +18,10 @@ public class Controller
 
     public void init()
     {
-        this.decimal_value_int = 0;
+        setDecimal_value_int(0);
+        setDecimal_Value_double(0.0);
+        setFloatPoint(false);
+        setMinus(false);
         getLabel_bin().setText("0");
         getLabel_oct().setText("0");
         getLabel_hex().setText("0");
@@ -26,6 +29,7 @@ public class Controller
 
     public void callAll()
     {
+        init();
         getValueOfBinaryNumber();
         getValueOfOctalNumber();
         getValueOfHexNumber();
