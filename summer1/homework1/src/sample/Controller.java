@@ -12,9 +12,9 @@ public class Controller
     @FXML
     private Label label_bin, label_oct, label_hex,warning;
 
-    private Integer decimal_value_int;
+    private Integer decimal_value_int =0;
     private Boolean floatPoint = false,minus = false;
-    private Double decimal_Value_double;
+    private Double decimal_Value_double=0.0;
 
     public void init()
     {
@@ -43,6 +43,7 @@ public class Controller
                 setMinus(true);
             if(numberString.contains("."))
             {
+
                 setFloatPoint(true);
                 String[] arr = numberString.split("\\.");
                 setDecimal_value_int(Integer.parseInt(arr[0]));
@@ -89,6 +90,7 @@ public class Controller
         StringBuilder stringBuilderInt = new StringBuilder();
         StringBuilder stringBuilderFloat = new StringBuilder();
         double temp_double = getDecimal_Value_double();
+
         if(floatPoint)
         {
             if (temp_int==0) result += "0";
