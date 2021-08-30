@@ -93,6 +93,11 @@
                   </RadialGradient>
                </textFill>
             </Label>
+            <Label fx:id="error_mes" layoutX="181.0" layoutY="729.0" text="Watch out! Something wrong!" textFill="RED" visible="false">
+               <font>
+                  <Font name="Times New Roman" size="36.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

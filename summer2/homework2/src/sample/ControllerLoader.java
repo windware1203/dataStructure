@@ -11,11 +11,14 @@ public class ControllerLoader
     @FXML
     private TextField text_name;
     @FXML
-    private Label label_easy, label_advanced;
+    private Label label_easy, label_advanced,error_mes;
     @FXML
     private RadioButton box_easy,box_advanced;
     @FXML
     private Button submit;
+
+    private Boolean isError = true;
+    private String name = "";
 
     public void click_easy()
     {
@@ -23,6 +26,7 @@ public class ControllerLoader
         getLabel_easy().setTextFill(Color.RED);
         getLabel_advanced().setUnderline(false);
         getLabel_advanced().setTextFill(Color.BLACK);
+        isError = false;
     }
 
     public void click_advanced()
@@ -31,15 +35,51 @@ public class ControllerLoader
         getLabel_advanced().setTextFill(Color.RED);
         getLabel_easy().setUnderline(false);
         getLabel_easy().setTextFill(Color.BLACK);
+        isError = false;
     }
 
     public void submit_name(ActionEvent actionEvent)
     {
+        if(!getName().isEmpty())
+        {
+            isError = false;
+        }
+
+        if(isError)
+            getError_mes().setVisible(true);
+        else
         Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming());
     }
 
+    public Label getError_mes()
+    {
+        return error_mes;
+    }
 
+    public void setError_mes(Label error_mes)
+    {
+        this.error_mes = error_mes;
+    }
 
+    public Boolean getError()
+    {
+        return isError;
+    }
+
+    public void setError(Boolean error)
+    {
+        isError = error;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
     public Label getLabel_easy()
     {

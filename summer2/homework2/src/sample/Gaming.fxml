@@ -21,64 +21,7 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="800.0">
          <children>
-            <GridPane alignment="CENTER" layoutX="33.0" layoutY="101.0" prefHeight="598.0" prefWidth="735.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label text="0-9 merely" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Times New Roman" size="28.0" />
-                     </font>
-                  </Label>
-                  <Label text="0~9 + A`Z non case-sensitive" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Times New Roman" size="28.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="text_name" prefHeight="23.0" prefWidth="315.0" promptText="Your name plz." GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Times New Roman" size="21.0" />
-                     </font>
-                  </TextField>
-                  <Button fx:id="submit" mnemonicParsing="false" onAction="#submit_name" onMouseClicked="#submit_name" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Times New Roman" size="19.0" />
-                     </font>
-                  </Button>
-                  <Label fx:id="label_easy" text="Easy">
-                     <font>
-                        <Font name="Times New Roman" size="48.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="label_advanced" text="Advanced" GridPane.columnIndex="1">
-                     <font>
-                        <Font name="Times New Roman" size="48.0" />
-                     </font>
-                  </Label>
-                  <RadioButton fx:id="box_easy" mnemonicParsing="false" onAction="#click_easy" onMouseClicked="#click_easy" text="Easy" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Times New Roman" size="20.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="dif" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="box_easy" mnemonicParsing="false" onAction="#click_advanced" onMouseClicked="#click_advanced" text="Advanced" toggleGroup="$dif" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Times New Roman" size="20.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-            </GridPane>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="57.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="519.0" text="Please Choose The Difficulty" textAlignment="CENTER" underline="true" wrapText="true">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="57.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="519.0" text="Gaming" textAlignment="CENTER" underline="true" wrapText="true">
                <font>
                   <Font name="Yu Mincho Demibold" size="26.0" />
                </font>
@@ -89,6 +32,21 @@
                         <Stop color="#890abf" offset="0.007518796992481203" />
                         <Stop color="#f50000" offset="0.41353383458646586" />
                         <Stop color="#eb1cd3" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="error_message" layoutX="250.0" layoutY="719.0" text="! Check Your Input !" visible="false">
+               <font>
+                  <Font name="Times New Roman" size="36.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.3833333333333334" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="RED" />
+                        <Stop color="RED" offset="0.007518796992481203" />
+                        <Stop color="#ffb800" offset="0.9966216216216216" />
+                        <Stop color="#edde0e" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
