@@ -1,0 +1,104 @@
+package sample;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.*;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class ControllerLoader
+{
+    @FXML
+    private TextField text_name;
+    @FXML
+    private Label label_easy, label_advanced;
+    @FXML
+    private RadioButton box_easy,box_advanced;
+    @FXML
+    private Button submit;
+
+    public void click_easy()
+    {
+        getLabel_easy().setUnderline(true);
+        getLabel_easy().setTextFill(Color.RED);
+        getLabel_advanced().setUnderline(false);
+        getLabel_advanced().setTextFill(Color.BLACK);
+    }
+
+    public void click_advanced()
+    {
+        getLabel_advanced().setUnderline(true);
+        getLabel_advanced().setTextFill(Color.RED);
+        getLabel_easy().setUnderline(false);
+        getLabel_easy().setTextFill(Color.BLACK);
+    }
+
+    public void submit_name(ActionEvent actionEvent)
+    {
+        Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming());
+    }
+
+
+
+
+    public Label getLabel_easy()
+    {
+        return label_easy;
+    }
+
+    public TextField getText_name()
+    {
+        return text_name;
+    }
+
+    public void setText_name(TextField text_name)
+    {
+        this.text_name = text_name;
+    }
+
+    public void setLabel_easy(Label label_easy)
+    {
+        this.label_easy = label_easy;
+    }
+
+    public void setLabel_advanced(Label label_advanced)
+    {
+        this.label_advanced = label_advanced;
+    }
+
+    public RadioButton getBox_easy()
+    {
+        return box_easy;
+    }
+
+    public void setBox_easy(RadioButton box_easy)
+    {
+        this.box_easy = box_easy;
+    }
+
+    public RadioButton getBox_advanced()
+    {
+        return box_advanced;
+    }
+
+    public void setBox_advanced(RadioButton box_advanced)
+    {
+        this.box_advanced = box_advanced;
+    }
+
+    public Button getSubmit()
+    {
+        return submit;
+    }
+
+    public void setSubmit(Button submit)
+    {
+        this.submit = submit;
+    }
+
+    public Label getLabel_advanced()
+    {
+        return label_advanced;
+    }
+
+}

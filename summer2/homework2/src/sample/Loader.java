@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.Stage;
 
-public class Main extends Application
+public class Loader extends Application
 {
 
     @Override
@@ -13,7 +13,7 @@ public class Main extends Application
     {
         Parent root = FXMLLoader.load(getClass().getResource("loader.fxml"));
 
-        primaryStage.setTitle("Cheng Hao's Homework2");
+        primaryStage.setTitle("Homework 2");
         primaryStage.setScene(new Scene(root, 800, 800));
         primaryStage.show();
     }
