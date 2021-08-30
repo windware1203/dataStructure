@@ -14,7 +14,7 @@ public class Main extends Application
         Parent root = FXMLLoader.load(getClass().getResource("loader.fxml"));
 
         primaryStage.setTitle("Cheng Hao's Homework2");
-        primaryStage.setScene(new Scene(root, 600, 600));
+        primaryStage.setScene(new Scene(root, 800, 800));
         primaryStage.show();
     }
 
