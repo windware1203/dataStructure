@@ -43,27 +43,27 @@
                         <Font name="Times New Roman" size="28.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="23.0" prefWidth="315.0" promptText="Your name plz." GridPane.rowIndex="3">
+                  <TextField fx:id="text_name" prefHeight="23.0" prefWidth="315.0" promptText="Your name plz." GridPane.rowIndex="3">
                      <font>
                         <Font name="Times New Roman" size="15.0" />
                      </font>
                   </TextField>
-                  <Button mnemonicParsing="false" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="submit" mnemonicParsing="false" onAction="#submit_name" onMouseClicked="#submit_name" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Times New Roman" size="19.0" />
                      </font>
                   </Button>
-                  <Label text="Easy">
+                  <Label fx:id="label_easy" text="Easy">
                      <font>
                         <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <Label text="Advanced" GridPane.columnIndex="1">
+                  <Label fx:id="label_advanced" text="Advanced" GridPane.columnIndex="1">
                      <font>
                         <Font name="Times New Roman" size="48.0" />
                      </font>
                   </Label>
-                  <RadioButton mnemonicParsing="false" text="Easy" GridPane.rowIndex="2">
+                  <RadioButton fx:id="box_easy" mnemonicParsing="false" onAction="#click_easy" onMouseClicked="#click_easy" text="Easy" GridPane.rowIndex="2">
                      <font>
                         <Font name="Times New Roman" size="20.0" />
                      </font>
@@ -71,7 +71,7 @@
                         <ToggleGroup fx:id="dif" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Advanced" toggleGroup="$dif" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton fx:id="box_easy" mnemonicParsing="false" onAction="#click_advanced" onMouseClicked="#click_advanced" text="Advanced" toggleGroup="$dif" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Times New Roman" size="20.0" />
                      </font>
