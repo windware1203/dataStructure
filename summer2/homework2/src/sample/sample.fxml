@@ -19,78 +19,11 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="600.0" prefWidth="600.0">
+      <Pane prefHeight="800.0" prefWidth="800.0">
          <children>
-            <GridPane alignment="CENTER" layoutX="25.0" layoutY="126.0" prefHeight="389.0" prefWidth="550.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="225.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="217.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="108.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <TextField fx:id="decimalNumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#init" prefHeight="41.0" prefWidth="177.0" promptText="Decimal number" GridPane.columnIndex="1">
-                     <font>
-                        <Font name="Times New Roman" size="15.0" />
-                     </font></TextField>
-                  <Label text="Input the Decimal number : ">
-                     <font>
-                        <Font name="Times New Roman" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="label_bin" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Times New Roman" size="20.0" />
-                     </font></Label>
-                  <Label fx:id="label_oct" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Times New Roman" size="20.0" />
-                     </font></Label>
-                  <Label fx:id="label_hex" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Times New Roman" size="20.0" />
-                     </font></Label>
-                  <Label text="Binary:" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Times New Roman Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="Octal:" GridPane.rowIndex="2">
-                     <font>
-                        <Font name="Times New Roman Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label text="Hexadecimal:" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Times New Roman Bold" size="25.0" />
-                     </font>
-                  </Label>
-                  <Button graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#init" prefHeight="40.0" prefWidth="85.0" text="reset" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font name="Yu Mincho Demibold" size="18.0" />
-                     </font>
-                     <effect>
-                        <ColorAdjust brightness="-0.14" contrast="0.05" hue="-1.0" saturation="-0.44" />
-                     </effect>
-                  </Button>
-                  <Button graphicTextGap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#callAll" onContextMenuRequested="#callAll" onMouseClicked="#callAll" prefHeight="40.0" prefWidth="85.0" text="submit" GridPane.columnIndex="2">
-                     <font>
-                        <Font name="Yu Mincho Demibold" size="18.0" />
-                     </font>
-                     <effect>
-                        <ColorAdjust contrast="0.05" saturation="0.21" />
-                     </effect>
-                  </Button>
-               </children>
-            </GridPane>
-            <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" lineSpacing="2.0" prefHeight="97.0" prefWidth="519.0" text="Input the Decimal number and click the button &#10;to get the numer by the following positional notation ." underline="true" wrapText="true">
+            <Label alignment="CENTER" layoutX="141.0" layoutY="14.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="519.0" text="Please Choose The Difficulty" underline="true" wrapText="true">
                <font>
-                  <Font name="Yu Mincho Demibold" size="20.0" />
+                  <Font name="Yu Mincho Demibold" size="26.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.2777777777777778" centerY="0.5" radius="0.5">
@@ -103,11 +36,38 @@
                   </RadialGradient>
                </textFill>
             </Label>
-            <Label fx:id="warning" layoutX="164.0" layoutY="515.0" text="Digital Number ONLY" textAlignment="CENTER" textFill="#f20f0f" visible="false">
-               <font>
-                  <Font name="Times New Roman Bold Italic" size="29.0" />
-               </font>
-            </Label>
+            <GridPane alignment="CENTER" layoutX="154.0" layoutY="58.0" prefHeight="153.0" prefWidth="494.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" text="Easy">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Advanced" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label text="0-9 merely" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="0~9 + A`Z non case-sensitive" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
          </children>
       </Pane>
    </children>
