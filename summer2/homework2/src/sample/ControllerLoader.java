@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
@@ -38,17 +37,22 @@ public class ControllerLoader
         isError = false;
     }
 
-    public void submit_name(ActionEvent actionEvent)
+    public void submit_name()
     {
-        if(!getName().isEmpty())
+        try
         {
-            isError = false;
+            setName(getText_name().getText());
         }
+        catch (Exception e)
+        {
+            isError = true;
+        }
+
 
         if(isError)
             getError_mes().setVisible(true);
         else
-        Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming());
+            Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming(getName()));
     }
 
     public Label getError_mes()

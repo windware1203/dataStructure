@@ -8,12 +8,19 @@ import javafx.stage.Stage;
 
 public class Gaming extends Application
 {
+    private String name = "";
+
+    public Gaming(String name)
+    {
+        this.name = name;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception
     {
         Parent root = FXMLLoader.load(getClass().getResource("Gaming.fxml"));
 
-        primaryStage.setTitle("Homework 2");
+        primaryStage.setTitle(" Hi player: " + name);
         primaryStage.setScene(new Scene(root, 800, 800));
         primaryStage.show();
     }
