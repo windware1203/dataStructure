@@ -45,11 +45,11 @@ public class ControllerLoader
         }
         catch (Exception e)
         {
-            isError = true;
+            setError(false);
         }
 
 
-        if(isError)
+        if(getError())
             getError_mes().setVisible(true);
         else
             Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming(getName()));

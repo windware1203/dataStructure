@@ -21,7 +21,7 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="800.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="57.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="519.0" text="Gaming" textAlignment="CENTER" underline="true" wrapText="true">
+            <Label fx:id="label_topic" alignment="CENTER" contentDisplay="CENTER" layoutX="141.0" layoutY="37.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="519.0" text="Gaming" textAlignment="CENTER" underline="true" wrapText="true">
                <font>
                   <Font name="Yu Mincho Demibold" size="26.0" />
                </font>
