@@ -2,11 +2,13 @@ package sample;
 
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 public class ControllerLoader
 {
+    @FXML
+    private Pane login;
     @FXML
     private TextField text_name;
     @FXML
@@ -16,8 +18,16 @@ public class ControllerLoader
     @FXML
     private Button submit;
 
+    @FXML
+    private Pane gaming;
+    @FXML
+    private Label label_name,label_level,label_hint,lable_level_description;
+    @FXML
+    private TextField answer;
+
     private Boolean isError = true;
     private String name = "";
+    private Boolean level;
 
     public void click_easy()
     {
@@ -25,7 +35,8 @@ public class ControllerLoader
         getLabel_easy().setTextFill(Color.RED);
         getLabel_advanced().setUnderline(false);
         getLabel_advanced().setTextFill(Color.BLACK);
-        isError = false;
+        setError(false);
+        setLevel(false);
     }
 
     public void click_advanced()
@@ -34,7 +45,8 @@ public class ControllerLoader
         getLabel_advanced().setTextFill(Color.RED);
         getLabel_easy().setUnderline(false);
         getLabel_easy().setTextFill(Color.BLACK);
-        isError = false;
+        setError(false);
+        setLevel(true);
     }
 
     public void submit_name()
@@ -42,32 +54,83 @@ public class ControllerLoader
         try
         {
             setName(getText_name().getText());
+            getLabel_name().setText(getName());
+            getLabel_level().setText(level?"Advanced":"Easy");
+            getLable_level_description().setText(level?"0~9+A`Z non case-sensitive":"0-9 merely");
         }
         catch (Exception e)
         {
             setError(false);
         }
 
+        setError(name.length() <= 0);
 
-        if(getError())
-            getError_mes().setVisible(true);
+        if(!isError)
+        {
+            getLogin().setVisible(false);
+            getGaming().setVisible(true);
+        }
         else
-            Switch.switchWindow((Stage) submit.getScene().getWindow(), new Gaming(getName()));
+            getError_mes().setVisible(true);
+
     }
+
+    public Pane getLogin()
+    {
+        return login;
+    }
+
+    public Label getLabel_hint()
+    {
+        return label_hint;
+    }
+
+    public Label getLable_level_description()
+    {
+        return lable_level_description;
+    }
+
+    public TextField getAnswer()
+    {
+        return answer;
+    }
+
+    public Label getLabel_name()
+    {
+        return label_name;
+    }
+
+    public Pane getGaming()
+    {
+        return gaming;
+    }
+
+
 
     public Label getError_mes()
     {
         return error_mes;
     }
 
-    public void setError_mes(Label error_mes)
+
+    public void setLevel(Boolean level)
     {
-        this.error_mes = error_mes;
+        this.level = level;
+    }
+
+    public Label getLabel_level()
+    {
+        return label_level;
     }
 
     public Boolean getError()
     {
         return isError;
+    }
+
+    public Boolean getLevel()
+    {
+        return level;
     }
 
     public void setError(Boolean error)

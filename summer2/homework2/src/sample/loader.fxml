@@ -19,7 +19,95 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="800.0" prefWidth="800.0">
+      <Pane fx:id="gaming" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="253.0" layoutY="36.0" prefHeight="228.0" prefWidth="294.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="44.0" prefWidth="90.0" text="Name  :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_name" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="75.0" text="N/N" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label text="Level :" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_level" text="N/N" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label text="Timer :" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label text="Times :" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_timer" text="N/N" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_times" text="N/N" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <TextField fx:id="answer" layoutX="253.0" layoutY="455.0" prefHeight="42.0" prefWidth="195.0" promptText="4 words only">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button layoutX="464.0" layoutY="455.0" mnemonicParsing="false" text="Answer">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Label layoutX="391.0" layoutY="550.0" text="Hint">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_hint" layoutX="385.0" layoutY="607.0" text="0A 0B">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="289.0" prefHeight="65.0" prefWidth="204.0" text="Level description" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label fx:id="lable_level_description" alignment="CENTER" contentDisplay="CENTER" layoutX="374.0" layoutY="372.0" text="Label">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="login" prefHeight="800.0" prefWidth="800.0" visible="false">
          <children>
             <GridPane alignment="CENTER" layoutX="33.0" layoutY="101.0" prefHeight="598.0" prefWidth="735.0">
               <columnConstraints>
@@ -71,7 +159,7 @@
                         <ToggleGroup fx:id="dif" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="box_easy" mnemonicParsing="false" onAction="#click_advanced" onMouseClicked="#click_advanced" text="Advanced" toggleGroup="$dif" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <RadioButton fx:id="box_advanced" mnemonicParsing="false" onAction="#click_advanced" onMouseClicked="#click_advanced" text="Advanced" toggleGroup="$dif" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Times New Roman" size="20.0" />
                      </font>
