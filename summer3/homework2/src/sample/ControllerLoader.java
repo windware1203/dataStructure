@@ -211,11 +211,11 @@ public class ControllerLoader
         refresh();
     }
     public void HS(String sortBody,Boolean sortCrease)
-    {
+    {//todo
 
     }
     public void QS(String sortBody,Boolean sortCrease)
-    {
+    {//todo
 
     }
     public void Sort()
@@ -257,6 +257,8 @@ public class ControllerLoader
         int min = arr.get(0);
         Collections.reverse(arr);
         int max = arr.get(0);
+
+        //compute avg
         int avg = 0;
         for (int i: arr)
         {
@@ -264,6 +266,7 @@ public class ControllerLoader
         }
         avg /= getStudentNum();
 
+        //compute Standard Deviation
         int Sdev = 0;
         for (int i: arr)
         {
