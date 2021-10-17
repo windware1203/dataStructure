@@ -132,7 +132,7 @@ public class ControllerLoader
         }
 
     }
-    public void IS()
+    public void IS()//insertion Sort
     {
         switch (getSortBody())
         {
@@ -207,7 +207,7 @@ public class ControllerLoader
                 }
                 break;
         }
-        if(!getSortCrease()) Collections.reverse(getStudentArray());
+        if(!getSortCrease()) Collections.reverse(getStudentArray());//Increase or Decrease
         refresh();
     }
     public void HS(String sortBody,Boolean sortCrease)
