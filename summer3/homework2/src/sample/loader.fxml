@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane prefHeight="694.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerLoader">
+   <children>
+      <Button fx:id="ButtonRead" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#readFile" text="Read File">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="LabelOutput" alignment="TOP_LEFT" layoutX="250.0" layoutY="22.0" prefHeight="279.0" prefWidth="365.0" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <GridPane fx:id="GridPaneFunc" alignment="CENTER" gridLinesVisible="true" layoutX="27.0" layoutY="306.0" prefHeight="386.0" prefWidth="618.0">
+         <children>
+            <Button fx:id="ButtonSort" mnemonicParsing="false" onAction="#Sort" text="Sort" GridPane.columnIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonAnalyze" mnemonicParsing="false" onAction="#Analyze" text="Analyze" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonFind" mnemonicParsing="false" onAction="#BinFind" text="Find" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="FindTarget" alignment="CENTER" prefHeight="23.0" prefWidth="160.0" promptText="Name or Seat Number" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <RadioButton fx:id="FindName" mnemonicParsing="false" onAction="#setFindName" selected="true" text="Name" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="TextType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="FindNum" mnemonicParsing="false" onAction="#setFindNum" text="Seat Number" toggleGroup="$TextType" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </RadioButton>
+            <Label prefHeight="84.0" prefWidth="113.0" text="Choose your Sorting type and click the Sort button" textAlignment="CENTER" wrapText="true" />
+            <Label prefHeight="85.0" prefWidth="118.0" text="Choose your Analyzing type and click the Analyze button" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1" />
+            <VBox alignment="CENTER_LEFT" maxWidth="120.0" prefWidth="120.0" spacing="10.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+               <children>
+                  <RadioButton fx:id="RB_IS" mnemonicParsing="false" onAction="#setIS" selected="true" text="Insertion  Sort">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="SortType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="RB_HS" mnemonicParsing="false" onAction="#setHS" text="Heap Sort" toggleGroup="$SortType" />
+                  <RadioButton fx:id="RB_QS" mnemonicParsing="false" onAction="#setQS" text="Quick Sort" toggleGroup="$SortType" />
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <RadioButton fx:id="SMath" mnemonicParsing="false" onAction="#setSortMath" selected="true" text="Math">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="SortSubject" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="SChi" mnemonicParsing="false" onAction="#setSortChi" text="Chinese" toggleGroup="$SortSubject" />
+                        <RadioButton fx:id="SName" mnemonicParsing="false" onAction="#setSortName" text="Name" toggleGroup="$SortSubject" />
+                        <RadioButton fx:id="SNum" mnemonicParsing="false" onAction="#setSortNum" text="Number" toggleGroup="$SortSubject" />
+                        <RadioButton fx:id="SAvg" mnemonicParsing="false" onAction="#setSortAvg" text="Average" toggleGroup="$SortSubject" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="Sa" mnemonicParsing="false" onAction="#setSortIn" selected="true" text="Increase">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="Crease" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="Sd" mnemonicParsing="false" onAction="#setSortDe" text="Decrease" toggleGroup="$Crease" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <RadioButton fx:id="AnaMath" mnemonicParsing="false" onAction="#setAnaMath" selected="true" text="Math" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="AnaType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="AnaChi" mnemonicParsing="false" onAction="#setAnsChi" text="Chinese" toggleGroup="$AnaType" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </RadioButton>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="141.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="119.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="156.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label layoutX="250.0" layoutY="7.0" prefHeight="15.0" prefWidth="348.0" text="Seat number        Name               Math          Chinese    Average" />
+      <Label fx:id="LabelAna" layoutX="14.0" layoutY="48.0" text="Ana" textFill="#4211e4">
+         <font>
+            <Font name="UD Digi Kyokasho NK-B" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="LabelSearch" layoutX="14.0" layoutY="211.0" text="Search" textFill="#a45825">
+         <font>
+            <Font name="UD Digi Kyokasho NK-B" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
