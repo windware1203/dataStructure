@@ -17,7 +17,7 @@ public class ControllerLoader
     @FXML
     private TextField TextFind;
     @FXML
-    private RadioButton SAvg,Sa;
+    private RadioButton SAvg,Sa,SName,SNum;
 
     private ArrayList<Student> StudentArray= new ArrayList<>();
     private String SortType = "IS", SortBody = "Math";
@@ -281,58 +281,122 @@ public class ControllerLoader
     public void BinFind()
     {
         if(!getFile())readFile();
+        /*
         setSortBody("Avg");
         setSortCrease(true);
         getSAvg().setSelected(true);
         getSa().setSelected(true);
         IS();
-        Student target = getStudentArray().get(0);
+        */
+        Student target = null;
         switch (getFindType())
         {
             case "Name":
-                target = FindName(getStudentArray(), getTextFind().getText() ,0,getStudentNum());
+                setSortBody("Name");
+                setSortCrease(true);
+                getSName().setSelected(true);
+                getSa().setSelected(true);
+                IS();
+                try
+                {
+                    target = FindName(getStudentArray(), getTextFind().getText() ,0,getStudentNum()-1);
+                    getLabelSearch().setText(target.StringOutput());
+                }
+                catch (Exception e)
+                {
+                    getLabelSearch().setText("NOT FOUND");
+                }
+
                 break;
             case "Num":
-                target = FindNum(getStudentArray(),getTextFind().getText() ,0,getStudentNum());
+                setSortBody("Num");
+                setSortCrease(true);
+                getSNum().setSelected(true);
+                getSa().setSelected(true);
+                IS();
+                try
+                {
+                    target = FindNum(getStudentArray(), getTextFind().getText() ,0,getStudentNum()-1);
+                    getLabelSearch().setText(target.StringOutput());
+                }
+                catch (Exception e)
+                {
+                    getLabelSearch().setText("NOT FOUND");
+                }
+
                 break;
         }
-        getLabelSearch().setText(target.StringOutput());
+
     }
     public Student FindName(ArrayList<Student> arr,String name,int left,int right)
     {
-        if(!(left > right))
+        if(left > right)return null;
+
+        int mid = (left+right)/2;
+        if(arr.get(mid).getName().equals(name))
         {
-            int mid = (left+right)/2;
-            if(arr.get(mid).getName().equals(name))
-            {
-                setRank(mid+1);
-                return arr.get(mid);
-            }
-            else if(arr.get(mid).getName().compareTo(name) < 0)
-                return FindName(arr,name,mid+1,right);
-            else if(arr.get(mid).getName().compareTo(name) > 0)
-                return FindName(arr,name,left,mid-1);
+            return arr.get(mid);
         }
+        if(arr.get(left).getName().equals(name))
+        {
+            return arr.get(left);
+        }
+        if(arr.get(right).getName().equals(name))
+        {
+            return arr.get(right);
+        }
+        else if(arr.get(mid).getName().compareTo(name) < 0)
+            return FindName(arr,name,mid+1,right);
+        else if(arr.get(mid).getName().compareTo(name) > 0)
+            return FindName(arr,name,left,mid-1);
+
+        return null;
     }
-    public Student FindNum(ArrayList<Student> arr,String number,int left,int right)
+    public Student FindNum(ArrayList<Student> arr,String number,Integer left,Integer right)
     {
         Integer num = Integer.parseInt(number);
-        if(!(left > right))
-        {
-            int mid = (left+right)/2;
-            if(arr.get(mid).getSeatNumber().equals(num))
-            {
-                setRank(mid+1);
-                return arr.get(mid);
-            }
+        if(left > right)return null;
 
-            else if(arr.get(mid).getSeatNumber().compareTo(num) < 0)
-                return FindName(arr,number,mid+1,right);
-            else if(arr.get(mid).getSeatNumber().compareTo(num) > 0)
-                return FindName(arr,number,left,mid-1);
+        int mid = (left+right)/2;
+        if(arr.get(mid).getSeatNumber().equals(num))
+        {
+            return arr.get(mid);
         }
+        if(arr.get(left).getSeatNumber().equals(num))
+        {
+            return arr.get(left);
+        }
+        if(arr.get(right).getSeatNumber().equals(num))
+        {
+            return arr.get(right);
+        }
+        else if(arr.get(mid).getSeatNumber().compareTo(num) < 0)
+            return FindNum(arr,number,mid+1,right);
+        else if(arr.get(mid).getSeatNumber().compareTo(num) > 0)
+            return FindNum(arr,number,left,mid-1);
+        return null;
     }
 
+
+    public RadioButton getSName()
+    {
+        return SName;
+    }
+
+    public void setSName(RadioButton SName)
+    {
+        this.SName = SName;
+    }
+
+    public RadioButton getSNum()
+    {
+        return SNum;
+    }
+
+    public void setSNum(RadioButton SNum)
+    {
+        this.SNum = SNum;
+    }
 
     public Integer getRank()
     {
