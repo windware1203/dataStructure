@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class ControllerLoader
@@ -210,7 +209,7 @@ public class ControllerLoader
         if(!getSortCrease()) Collections.reverse(getStudentArray());//Increase or Decrease
         refresh();
     }
-    public void HS(String sortBody,Boolean sortCrease)
+    public void HS(Boolean sortCrease)
     {//todo
 
     }
@@ -227,7 +226,7 @@ public class ControllerLoader
                 IS();
                 break;
             case "HS":
-                HS(getSortBody(),getSortCrease());
+                HS(getSortCrease());
                 break;
             case "QS":
                 QS(getSortBody(),getSortCrease());
